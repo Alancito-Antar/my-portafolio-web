@@ -1,5 +1,6 @@
 export interface Project {
   id: string;
+  order: number;
   name: string;
   about: string;
   small_description?: string;

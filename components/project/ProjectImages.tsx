@@ -7,14 +7,14 @@ export default function ProjectImages({ images }: { images: string[] }) {
       {images.map((x) => (
         <Fragment key={x}>
           <Image
-            className="hidden md:block"
+            className="hidden rounded-md md:block"
             alt={x}
             src={x}
             width={400}
             height={800}
           />
           <Image
-            className="md:hidden"
+            className="md:hidden rounded-md"
             alt={x}
             src={x}
             width={200}

@@ -4,7 +4,7 @@ import db from "@/lib/firebase/firestore";
 import { Project } from "@/lib/project/types";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import ProjectCard from "./components/home/ProjectCard";
+import ProjectCard from "../components/home/ProjectCard";
 
 export default function Home() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -40,13 +40,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-y-10">
-      <div>
-        <h1 className="text-4xl font-bold">Hey there! I&apos;m Alan</h1>
-        <h2 className="text-base font-bold">
-          and this is what I&apos;ve been working on so far!
-        </h2>
-      </div>
-      {loading && <div>Loading...</div>}
+      {loading && <div className="text-black">Loading...</div>}
 
       <div className="overflow-y-auto items-center justify-center flex flex-wrap gap-4">
         {projects.map((project) => (

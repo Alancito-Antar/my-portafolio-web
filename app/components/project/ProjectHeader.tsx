@@ -1,6 +1,7 @@
 import { Project } from "@/lib/project/types";
 import Image from "next/image";
 import React from "react";
+import { FaAppStore, FaGooglePlay } from "react-icons/fa";
 
 export default function ProjectHeader({ project }: { project: Project }) {
   return (
@@ -17,12 +18,14 @@ export default function ProjectHeader({ project }: { project: Project }) {
       />
 
       <div className="flex-1 gap-y-1">
-        <div className="relative">
+        {/* Name */}
+        <div className="flex gap-x-4">
           <h1 className="text-white text-3xl">{project.name}</h1>
-          <div className="rounded-lg bg-blue-500 absolute top-[-20] right-[-40] px-2">
+          <div className="h-4 rounded-lg bg-blue-500 px-2">
             <p className="text-white text-xs capitalize">{project.type}</p>
           </div>
         </div>
+        {/* Teck stack */}
         <div className="flex items-center flex-wrap gap-x-2">
           {project.tech_stack?.map((x) => (
             <div
@@ -33,21 +36,19 @@ export default function ProjectHeader({ project }: { project: Project }) {
             </div>
           ))}
         </div>
-
-        {/* <div className="flex-row items-center gap-x-2">
+        {/* Stores */}
+        <div className="flex-row mt-1 items-center gap-x-2">
           {project.appstore_url ? (
-            <Pressable onPress={() => handleStorePress(project.appstore_url!)}>
-              <Ionicons name="logo-apple-appstore" size={32} color="white" />
-            </Pressable>
+            <a href={project.appstore_url} target="_blank" rel="noreferrer">
+              <FaAppStore size={32} color="white" />
+            </a>
           ) : null}
           {project.google_play_url ? (
-            <Pressable
-              onPress={() => handleStorePress(project?.google_play_url!)}
-            >
-              <Ionicons name="logo-android" size={32} color="white" />
-            </Pressable>
+            <a href={project.google_play_url} target="_blank" rel="noreferrer">
+              <FaGooglePlay size={32} color="white" />
+            </a>
           ) : null}
-        </div> */}
+        </div>
       </div>
     </div>
   );

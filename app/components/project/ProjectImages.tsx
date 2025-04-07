@@ -9,7 +9,6 @@ export default function ProjectImages({ images }: { images: string[] }) {
           <Image
             className="hidden md:block"
             alt={x}
-            key={x}
             src={x}
             width={400}
             height={800}
@@ -17,7 +16,6 @@ export default function ProjectImages({ images }: { images: string[] }) {
           <Image
             className="md:hidden"
             alt={x}
-            key={x}
             src={x}
             width={200}
             height={400}

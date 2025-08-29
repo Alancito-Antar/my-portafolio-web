@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portafolio",
-  description: "This was made so fast, sorry for that!",
+  title: "Alan Antar Lerner - Senior Mobile & Web Developer",
+  description:
+    "Senior mobile and web developer with +4 years of experience. Specializing in React Native, Android Studio (Kotlin, Java), and modern web development with React/Next.js.",
 };
 
 export default function RootLayout({
@@ -24,14 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Header />
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-black via-gray-900 to-black`}
       >
-        <div className="m-8 md:mx-16 md:mb-16 xl:mx-32 xl:mb-32 rounded-xl border border-black/10 shadow-xl min-h-screen p-4 md:p-8 xl:p-16">
-          {children}
-        </div>
+        <Header />
+        <main className="min-h-screen">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 max-w-7xl">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl shadow-2xl min-h-[80vh] p-6 md:p-8 lg:p-12">
+              {children}
+            </div>
+          </div>
+        </main>
       </body>
     </html>
   );

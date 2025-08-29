@@ -4,7 +4,7 @@ export interface Project {
   name: string;
   about: string;
   small_description?: string;
-  type: "contractor" | "freelance";
+  type?: "contractor" | "freelance";
   icon_url?: string;
   tech_stack: [];
   images: [];

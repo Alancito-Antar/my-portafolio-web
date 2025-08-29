@@ -43,28 +43,28 @@ export default function ProjectId() {
   }, [getProjectById]);
 
   if (loading) {
-    return <div className="text-black">Loading...</div>;
+    return <div className="text-white">Loading...</div>;
   }
 
   if (!project) {
-    return <div className="text-black">Project not found</div>;
+    return <div className="text-white">Project not found</div>;
   }
 
   return (
     <div className="min-h-screen flex flex-col gap-y-4">
-      <header className="border-b border-black/20 pb-1">
+      <header className="border-b border-white/20 pb-1">
         <button
           className="flex items-center cursor-pointer gap-x-2"
           onClick={() => router.back()}
         >
-          <FaChevronLeft color="black" />
-          <p className="text-black">Back</p>
+          <FaChevronLeft color="white" />
+          <p className="text-white">Back</p>
         </button>
       </header>
       {/* Project Header */}
       <ProjectHeader project={project} />
       {/* About */}
-      <p className="text-black">{project.about}</p>
+      <p className="text-white">{project.about}</p>
       {/* Images */}
       <ProjectImages images={project.images || []} />
     </div>
